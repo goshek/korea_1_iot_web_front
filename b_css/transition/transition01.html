@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+        width:150px;
+        height:150px;
+        background-color: orange;
+        border-radius: 50%;
+        font-size: 16px;
+        padding: 30px;
+        /*
+            all: 모든 변경 가능한 속성에 적용
+                 각각의 속성명을 나열하여 각각 적용가능
+        */
+        /* transition: all 1000ms ease-in-out; */
+        transition: all 500ms ease-in-out;
+    }
+    #container:hover{
+        background-color: aqua;
+        font-size: 20px;
+        border-radius: 0%;
+    }
+
+    .inner{
+        width: 100px;
+        height: 100px;
+        background-color: khaki;
+        opacity: 0.9;
+        transition: all 1000ms,
+                    background-color 1.5s ease-in-out,
+                    opacity 0.5s ease-in-out,
+                    height 0.8s ease-in-out;
+    }
+
+    .inner:hover{
+        width: 200px;
+        height: 200px;
+        background-color: thistle;
+        opacity: 0;
+    }
+    
+    </style>
+</head>
+<body>
+    <div id="container">Hello World!!</div>
+    <div class="box">
+        <div class="inner"></div>
+    </div>
+</body>
+</html>
