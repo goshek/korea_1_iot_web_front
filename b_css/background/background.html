@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, tr, th,td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        .background{
+            width: 150px;
+            height: 200px;
+            padding: 20px;
+            border: 5px dotted #222;
+            background-color: #ffd9a0;
+            display: inline-block;
+        }
+
+        #border{
+            background-clip: border-box;
+        }
+        #padding{
+            background-clip: padding-box;
+        }
+        #content{
+            background-clip: content-box;
+        }
+
+        /* 배경이미지 삽입*/
+        #images{
+            width: 100%;
+            height: 500px;
+        }
+
+        .image{
+            width: 100%;
+            height: 100%;
+            /*기본형
+            backgroung-image: url('이미지 파일 경로')*/
+            background-image: url('https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzEwMTFfMTk1%2FMDAxNjk2OTg5MDQyOTY5.sfnj6wkpwLfXxP10uOoG3TYKCR0i9pYX-3r-aeac7oMg.IWD8J3LQ_B1cZAD_I4k3QuTGvSXa-8w-lmRwqUTgUe0g.PNG.lxeris7%2F20231006%25A3%25DF150334%25A3%25DF0000.png&type=sc960_832');
+            background-repeat: no-repeat;
+            /*background-position: center*/
+            background-position: 50px 20px;
+        }
+
+
+        #first{
+            width: 1500px;
+            background-attachment: fixed;
+            background-position: center;
+            background-color: aqua;
+        }
+
+        #container{
+            width: 1100px;
+            height: 50px auto;
+            background-color: lightpink;
+        }
+
+        .box{
+            width: 300px;
+            height: 300px;
+            border: 1px solid #222;
+            margin: 20px;
+            display: inline-block;
+            background: no-repeat left top url('https://search.pstatic.net/sunny/?src=https%3A%2F%2Fthumb10.iclickart.co.kr%2FThumb10%2F11950000%2F11943568.jpg&type=sc960_832')
+        }
+        /* 
+            고정 길이 값이 1개인 경우: 자동으로 너비값으로 설정
+            >> 높이 값의 경우 이미지의 원래 비율에 따라 적용
+        */
+        #bg1{background-size: auto;}
+        #bg2{background-size: 200px;}
+        #bg3{background-size: 50%;}
+        #bg4{background-size: 100% 100%;}
+        #bg5{background-size: contain;}
+        #bg6{background-size: cover;}
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>종류</th>
+            <th>설명</th>
+        </tr>
+        <tr>
+            <td>border-box</td>
+            <td>박스 모델의 가장 외곽인 테두리까지 적용 : 기본값</td>
+        </tr>
+        <tr>
+            <td>padding-box</td>
+            <td>	
+                박스 모델에서 테두리를 뺀 패딩 범위까지 적용</td>
+        </tr>
+        <tr>
+            <td>content-box</td>
+            <td>박스 모델에서 내용(콘텐츠) 부분에만 적용 </td>
+        </tr>
+    </table>
+    <div id="container">
+        <div class="background" id="border">
+            border
+        </div>
+        <div class="background" id="padding">
+            padding
+        </div>
+        <div class="background" id="content">
+            content
+        </div>
+    </div>
+    <br /><hr />
+
+    <table>
+        <tr>
+            <th>종류</th>
+            <th>설명</th>
+        </tr>
+        <tr>
+            <td>repeat</td>
+            <td>브라우저 화면에 가득 찰 때까지 가로와 세로로 반복 : 기본값</td>
+        </tr>
+        <tr>
+            <td>repeat-X</td>
+            <td>	
+                브라우저 화면 너비에 가득 찰 때까지 가로로 반복</td>
+        </tr>
+        <tr>
+            <td>repeat-Y</td>
+            <td>브라우저 화면 너비에 가득 찰 때까지 세로로 반복 </td>
+        </tr>
+        <tr>
+            <td>no-repeat</td>
+            <td>한 번만 표시하고 반복❌ </td>
+        </tr>
+    </table>
+    
+    <div id="images">
+        <div class="image" id="first"></div>
+        <div class="image"></div>
+    </div>
+
+    <hr />
+    <div id="container">
+        <div class="box" id="bg1"></div>
+        <div class="box" id="bg2"></div>
+        <div class="box" id="bg3"></div>
+        <div class="box" id="bg4"></div>
+        <div class="box" id="bg5"></div>
+        <div class="box" id="bg6"></div>
+    </div>
+</body>
+</html>

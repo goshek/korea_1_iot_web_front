@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+            margin: 10px auto;
+            padding: 10px;
+            border: 1px solid #ccc;
+            width: 80%;
+            justify-content: space-around;
+            align-items: flex-start;
+            flex-wrap: nowrap;
+        }
+
+        .item{
+            background-color: rgb(227, 167, 13);
+            padding: 20px;
+            margin: 5px;
+            border: 1px solid #000;
+            text-align: center;
+            min-width: 50px;
+        }
+
+        .example1 .flex-1{
+            flex:1;
+        }
+
+        .example1 .flex-2{
+            flex:2;
+        }
+        
+        .example1 .flex-3{
+            flex:0.5;
+        }
+
+        /* 
+            최소 크기값 200px이후 남은 부분이 200px이라 가정했을 때
+            200px을 1:2:1 비율로 분할 50, 100, 50
+        */
+
+        .example2 .flex-1-min{
+            flex: 1 200px
+        }
+
+        .example2 .flex-2-min{
+            flex: 2 200px
+        }
+
+        .example2 .flex-3-min{
+            flex: 1 200px
+        }
+
+        /* flex 속성: flex grow/ shrink/ basis속성의 약칭(한번에 작성) */
+        /* grow속성: 늘어나는 비율을 지정 */
+        .example3 .grow-1{
+            flex-grow: 1;
+        }
+        .example3 .grow-2{
+            flex-grow: 2;
+        }
+        .example3 .grow-3{
+            flex-grow: 3;
+        }
+
+        .box{
+            flex-grow: 1;
+            flex-basis: 200px;
+            margin: 5px;
+            text-align: center;
+            line-height: 100px;
+            color: white;
+        }
+        #shrink{
+            display:flex;
+            color: white;
+        }
+        /* shrink속성: 줄어드는 비율을 지정 */
+        .shrink-1{
+            background-color: red;
+            flex-shrink: 1;
+        }
+        .shrink-2{
+            background-color: green;
+            flex-shrink: 2;
+        }
+        .shrink-3{
+            background-color: blue;
+            flex-shrink: 3;
+        }
+
+        /* basis속성: 아이템의 기본 크기를 지정 */
+        .example5 .basis-1{
+            flex-basis: 100px;
+        }
+        .example5 .basis-2{
+            flex-basis: 200px;
+        }
+        .example5 .basis-3{
+            flex-basis: 300px;
+        }
+
+        #shrink {
+      display: flex;
+      width: 300px;
+      border: 1px solid black;
+    }
+    </style>
+</head>
+<body>
+    <h1>Flexbox</h1>
+    <section>
+        <!-- 
+            !flex-grow: 남은 여분의 공간을 어떻게 채울지 결정
+
+            !felx-shrink: 줄어드는 공간의 속도를 결정
+
+            !flex-basis: 공간의 크기 베이스를 설정
+        -->
+        <div class="container example1">
+            <div class="item flex-1">1</div>
+            <div class="item flex-2">2</div>
+            <div class="item flex-3">3</div>
+        </div>
+
+        <div class="container example2">
+            <div class="item flex-1-min">1</div>
+            <div class="item flex-2-min">2</div>
+            <div class="item flex-3-min">3</div>
+        </div>
+
+        <p>grow</p>
+        <div class="container example3">
+            <div class="item grow-1">1</div>
+            <div class="item grow-2">2</div>
+            <div class="item grow-3">3</div>
+        </div>
+
+        <p>shrink</p>
+        <div id="shrink">
+            <div class="box shrink-1">1</div>
+            <div class="box shrink-2">2</div>
+            <div class="box shrink-3">3</div>
+        </div>
+
+        <p>basis</p>
+        <div class="container example5">
+            <div class="item basis-1">1</div>
+            <div class="item basis-2">2</div>
+            <div class="item basis-3">3</div>
+        </div>
+    </section>
+</body>
+</html>

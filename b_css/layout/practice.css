@@ -1,0 +1,70 @@
+  section{
+    width: 800px;
+    margin: 0 auto;	
+  }
+  
+  h2{
+    font-size:1.5em;
+  }
+  
+  h3 {
+    font-size:1.0em;
+  }
+  
+  p {
+    line-height:20px;
+    font-size:12px;
+  }
+  
+  article {
+    width: 350px;
+    height: 200px;
+    /* 요소를 왼쪽 정렬 */
+    float:inline-start;
+    margin: 10px; /* 좌우 10px >> 20px */
+    padding: 10px; /* 좌우 10px >> 20px */
+    border: 1px solid #9b2828;
+  }
+  
+  footer {
+    width:100%;
+    height:50px;
+    background-color:#222;
+    /* 
+    - clear 속성은 float 속성에 의해 영향 받는 요소를 정리할 때 사용 
+    */
+    clear: left;
+  }
+  
+  footer > p {
+    color:#fff;
+    font-size:0.9em;
+    text-align: center;
+    line-height:50px;
+  }
+
+  /* 네비게이션 바 */
+ul{
+    list-style-type: none;
+}  
+
+ul >li{
+    float: left;
+}
+
+ul>li>a{
+    display: block;
+    padding: 10px 20px;
+    background-color: #ccc;
+
+    text-decoration:none;
+
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+
+}
+
+ul>li>a:hover{
+    background-color: #222;
+    color: white;
+}
