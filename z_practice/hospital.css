@@ -79,7 +79,7 @@ body{
     flex: 1;
 }
 #ad{
-    height: 400px;
+    height: 450px;
     background-color: darkgreen;
 }
 #search{
@@ -116,4 +116,24 @@ p{
     width: 450px;
     height: 25px;
     align-items: center;
+}
+.service_box>span{
+    padding: 70px;
+    font-weight: bold;
+    font-size: 35px;
+}
+
+.service_box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.service_box_inner{
+    display: flex;
+    flex-direction: row;
+    width: 1000px;
+    height: 100px;
+    background-color: #ccc;
+    border-radius: 10px;
 }
