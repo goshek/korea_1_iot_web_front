@@ -12,11 +12,16 @@
 
 // 3. 함수 정의
 // : 두 개의 숫자를 매개변수로 받아 그 합을 반환하는 함수 add를 작성
-function Person(name,age,isSudent){
-    this.name=name;
-    this.age=age;
-    this.isSudent=isSudent;
-}
+// function Person(name='gwon',age='20',isSudent='true'){
+//     this.name=name;
+//     this.age=age;
+//     this.isSudent=isSudent;
+// }
+let Person={
+    name:'gwon',
+    age:20,
+    isstudent: true
+};
 
 let fruits=['apple','banana','orange'];
 console.log(fruits[1]);
@@ -30,8 +35,8 @@ console.log(add(5,4));
 // 1. 객체 탐색
 // : 초급에서 작성한 person 객체의 모든 속성과 값을 순회하며 콘솔에 출력하는 코드를 작성
 // >> for in 반복문 사용
-let person1= new Person('gwon', 'hyuck', 20);
-console.log(person1);
+// let person1= new Person('gwon', 'hyuck', 20);
+// console.log(person1);
 
 //*for in 반복문
 // 객체와 배열의 순회를 가볍게 처리하는 반복문(for문의 객체, 배열 순회 -인덱스 번호가 필요없는 경우 사용)
@@ -55,13 +60,18 @@ console.log(fruitsUpper);
 let arr0=[1,2,3];
 let arr1=[4,5,6];
 let arr2=[];
+// function addArr(arr0, arr1){
+//     for(let i=0;i<arr0.length;i++){
+//         arr2[i]=arr0[i]+arr1[i];
+//     }
+// }
 function addArr(arr0, arr1){
-    for(let i=0;i<arr0.length;i++){
-        arr2[i]=arr0[i]+arr1[i];
-    }
+    let result=arr0.map(function(element,index){
+        return element+arr1[index];
+    });
+    return result;  
 }
-addArr(arr0,arr1);
-console.log(arr2);
+console.log(addArr(arr0,arr1));
 //? 문제 3
 // 1. 객체 깊은 복사
 // : person 객체를 깊은 복사하는 함수를 작성
@@ -77,4 +87,6 @@ const users = [
   ];
 
 let users2= JSON.parse(JSON.stringify(users));
-console.log(users2);
+let filtered_users=users.filter(function(value){
+    return value.age>=18;
+}).forEach(value=>console.log(value.name));
