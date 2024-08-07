@@ -1,17 +1,40 @@
+body{
+    background-color:aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 100vh;
+}
+
 #todo-app{
-    width: 200px;
-    margin: auto;
-    border: 1px solid orange;
+    background-color: #ffffff;
+    width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 20px;
 }
 
 #todo-input{
-    width: 140px;
-    margin: 0 auto;
-    padding: 10px;
+    width: calc(100% - 24px);
+    padding:10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
 }
 
 #add-button{
-    maring-top: 10px;
+    width: 100%;
+    padding: 10px;
+    background-color: #5cb85c;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+}
+
+#add-button:hover{
+    background-color: #4cae4c;
 }
 
 #todo-list{
@@ -22,7 +45,19 @@
 /* 동적 생성될 li 태그 스타일링*/
 .todo-item{
     margin-top: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
+.todo-item:hover{
+    background-color: #f88888
+}
+
 .completed{
     text-decoration: line-through;
     color: gray;

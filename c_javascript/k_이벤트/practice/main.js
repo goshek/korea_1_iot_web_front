@@ -30,3 +30,27 @@ addButton.addEventListener('click',function(){
     // 추가 버튼 클릭 시 동적으로 li태그 생성
     
 });
+
+todoList.addEventListener('click',(e)=>{
+    // e 이벤트 객체: 실제 이벤트가 발생되는 요소 target
+    // +) DOM요소의 태그명을 가져오기
+    // HTML요소.tagName >> 태그명의 알베펫이 모두 대문자표기될 것
+    if(e.target.tagName=== 'LI'){
+        //HTML 요소.classList: HTML요소의 class 속성에 접근
+        // .toggle('클래스명') 속성
+        // >> classList 중에서 해당 클래스명이 토글
+        // : 작성되어 있는 경우- 삭제
+        // : 작성되어 있지 않는 경우- 명시
+        e.target.classList.toggle('completed');
+    }
+});
+
+// !남은 글자 수 출력하기
+document.addEventListener('DOMContentLoaded',()=>{
+    const wordInput= document.querySelector('#word-input');
+    const p= document.querySelector('#para');
+    wordInput.addEventListener('keyup', (e)=>{
+        const length= wordInput.value.length;
+        p.textContent=`글자 수: ${length}`;
+    })
+})
