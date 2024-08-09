@@ -42,3 +42,4 @@ console.log(now.getDay());
     getMinuates()
     getSecond()
 */
+console.log(now.getMinutes());
