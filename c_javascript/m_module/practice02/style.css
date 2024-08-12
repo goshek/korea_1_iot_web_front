@@ -1,0 +1,98 @@
+body{
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 20px;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#app{
+    width: 100%;
+    max-width: 350px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+h1{
+    color: #333;
+    text-align: center;
+}
+
+form{
+    display: flex;
+    margin-bottom: 20px;
+}
+
+#new-todo{
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    margin-right: 5px;
+    /* imput 요소 활성화 시 표시되는 border라인 */
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#new-todo:hover, #new-todo:focus{
+    border-color:orange;
+}
+
+button{
+    background-color: orange;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    cursor:pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover{
+    background-color: darkorange;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0;padding: 0;
+}
+
+li{
+    background-color: #f9f9f9;
+    margin-top: 8px;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    
+   
+display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li:hover{
+    background-color: #efefef;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+li.completed{
+    text-decoration: line-through;
+    color: #888;
+}
+ 
+.delete-button{
+    margin-left: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.delete-button:hover{
+    background-color: darkred;
+}

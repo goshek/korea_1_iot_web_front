@@ -1,7 +1,7 @@
 {
-  "name": "c_javascript",
+  "name": "m_module",
   "version": "1.0.0",
-  "main": "array01.js",
+  "main": "module01.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
