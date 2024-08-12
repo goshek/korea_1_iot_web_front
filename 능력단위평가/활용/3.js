@@ -20,7 +20,8 @@ class Cars{
     }
 }
 
-let parkinArea=['A', 'B', 'C'];
+var parkinArea=['A', 'B', 'C'];
+let parkedArea=[];
 let count=0;
 
 class parking_Lot{
@@ -37,24 +38,67 @@ class parking_Lot{
         if(count>=3){
             console.log('주차가능한 공간이 없습니다.');
         }
+        else if((this.carList.findIndex(item=>item.carNum===carNum))!==-1){
+            console.log('이미 주차된 차량의 차량번호입니다.');
+        }
         else{
-            const parking= new Cars(carNum, carType,parkinArea[count++]);
+            const parking= new Cars(carNum, carType, parkinArea[0]);
             this.carList.push(parking);
+            parkedArea.push(parkinArea[0]);
+            parkinArea.shift();
+            count++;
         }
     }
 
     parkOut(parkedCarNum){
-        console.log(this.carList[0].carNum);
         this.carList=this.carList.filter(wantFilter=>{
             return wantFilter.carNum!==parkedCarNum;
         });
-}
+        parkinArea.push(parkedArea[0]);
+        parkedArea.shift();
+        count--;
+    }
+
+    clearPark(){
+        this.carList.length=0;
+        parkedArea.length=0;
+        count=0;
+        parkinArea=['A', 'B', 'C'];
+    }
 }
 
+
+//아래는 기능동작 확인을 쉽게 하기위한 코드
 const gwonParkingLot= new parking_Lot();
 gwonParkingLot.parkIn("123","SUV");
 gwonParkingLot.parkIn("456","경차");
 gwonParkingLot.parkIn("789","대형");
 gwonParkingLot.displayParkedCar();
+console.log(parkinArea);
+console.log(parkedArea);
+gwonParkingLot.parkOut("123");
 gwonParkingLot.parkOut("456");
 gwonParkingLot.displayParkedCar();
+console.log(parkinArea);
+console.log(parkedArea);
+gwonParkingLot.parkIn("888","경차");
+gwonParkingLot.parkIn("7777","대형");
+gwonParkingLot.displayParkedCar();
+console.log(parkinArea);
+console.log(parkedArea);
+gwonParkingLot.parkIn("7777","대형");
+
+gwonParkingLot.clearPark();
+gwonParkingLot.displayParkedCar();
+console.log(parkinArea);
+console.log(parkedArea);
+gwonParkingLot.parkIn("7777","대형");
+gwonParkingLot.displayParkedCar();
+console.log(parkinArea);
+console.log(parkedArea);
+gwonParkingLot.parkIn("7777","대형");
+gwonParkingLot.displayParkedCar();
+console.log(parkinArea);
+console.log(parkedArea);
+
+
