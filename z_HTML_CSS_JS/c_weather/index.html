@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App Project</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div id="background">
+    <div id="main_info">
+      <div id="now_time">
+        <p id="time">현재 시간</p>
+      </div>
+      <div id="now_weather">
+        <div id="cal">
+          <p id="cal_p">3C</p>
+        </div>
+        <div id="where">
+          <p id="where_p">seoul</p>
+        </div>
+        <div id="icon">
+          <img src="./sunny_cloud.png" alt="weather" id="icon_img">
+        </div>
+      </div>
+    </div>
+    <div id="overlay">
+      <div id="search_box">
+        <input type="text" placeholder="search">
+        <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png" id="mag">
+      </div>
+      <div id="detail_box">
+        <div id="weather_Datails">
+          <p>Weather Details</p>
+        </div>
+        <table>
+          <tr>
+            <td>Max/Min Temp</td>
+            <td class="right" id="max_min">null</td>
+          </tr>
+          <tr>
+            <td>Humidity</td>
+            <td class="right">null</td>
+          </tr>
+          <tr>
+            <td>Wind</td>
+            <td class="right">null</td>
+          </tr>
+          <tr>
+            <td>Cloudy</td>
+            <td class="right">null</td>
+          </tr>
+        </table>
+        <label>
+          <input role="switch" type="checkbox" id="toggle"/>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <script src="./main.js"></script>
+</body>
+</html>

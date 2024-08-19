@@ -1,0 +1,180 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+  background: url('./red.jpg') no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+#background {
+  height: 100%;
+}
+
+#main_info {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#now_time{
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+#now_weather{
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: row;
+  margin-left: 50px;
+}
+
+#cal_p{
+  font-size: 50px;
+  font-weight: bold;
+}
+
+#where_p{
+  margin-left: 20px;
+  font-size: 30px;
+  font-weight: bold;
+  padding-top: 20px;
+}
+
+#icon_img{
+  margin-left: 20px;
+  width: 40px;
+  padding-top: 20px;
+}
+
+#overlay{
+  position: absolute;
+  width: 35%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 8px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#search_box{
+  width: 80%;
+}
+
+#search_box>input{
+  margin-top: 30px;
+  padding: 5px;
+  width: 100%;
+  height: 30px;
+  border-top-left-radius: 8px ;
+  background-color: rgba(59, 58, 58, 0.6);
+}
+
+#search_box>input::placeholder{
+  color: black;
+}
+
+#mag{
+  position : absolute;
+  width: 17px;
+  top: 35px;
+  right: 70px;
+  margin: 0;
+}
+
+#detail_box{
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#weather_Datails{
+  width: 80%;
+  border-bottom: 2px solid black;
+}
+
+table{
+  width: 80%;
+  margin-top: 20px;
+}
+
+table tr{
+  height: 50px;
+}
+
+.right{
+  text-align: right;
+}
+
+label{
+  position: absolute;
+  bottom: 30px;
+  right: 60px;
+}
+
+
+[type="checkbox"] {
+  appearance: none;
+  position: relative;
+  border: max(2px, 0.1em) solid gray;
+  border-radius: 1.25em;
+  width: 5.5em;
+  height: 3em;
+}
+
+[type="checkbox"]::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  transform: scale(0.8);
+  background-color: gray;
+  transition: left 250ms linear;
+}
+
+[type="checkbox"]:checked {
+  background-color: black;
+  border-color: black;
+}
+
+[type="checkbox"]:checked::before {
+  background-color: white;
+  left: 2em;
+}
+
+[type="checkbox"]:disabled {
+  border-color: lightgray;
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+[type="checkbox"]:disabled:before {
+  background-color: lightgray;
+}
+
+[type="checkbox"]:disabled + span {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+[type="checkbox"]:focus-visible {
+  outline-offset: max(2px, 0.1em);
+  outline: max(2px, 0.1em) solid tomato;
+}
+
+[type="checkbox"]:enabled:hover {
+  box-shadow: 0 0 0 max(4px, 0.2em) lightgray;
+}
