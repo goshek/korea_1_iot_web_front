@@ -37,6 +37,7 @@ export default function UseState03() {
         console.log('Enter키가 눌림');
         // 입력된 내용을 배열의 요소에 추가, 다양한 로직 활용
     }
+    setEnter(e.currentTarget.value);
   };
 
   return (
@@ -57,6 +58,7 @@ export default function UseState03() {
         placeholder="Enter키 이벤트 처리"
         value={enter}
       />
+      <hr />
     </div>
   );
 }
