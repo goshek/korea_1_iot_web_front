@@ -52,6 +52,7 @@ export default function UseState01() {
     setCount(prevCount => prevCount + 1 ); // 0 + 1
     setCount(prevCount => prevCount + 1 ); // 1 + 1
     setCount(prevCount => prevCount + 1 ); // 2 + 1
+    setMessage(p=>p+'d');
   }
 
   const handleDownClick = () => {
