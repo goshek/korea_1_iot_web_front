@@ -15,6 +15,8 @@ import Example01 from './pages/c_Router/Example01';
 import Example02 from './pages/c_Router/Example02';
 
 import RouterHook from './pages/d_RouterHook'
+import Axios from './pages/e_Axios'
+import GlobalState from './pages/f_Globalstate'
 
 //! 리액트 프로젝트 개발 실행 명령어
 // npm run start
@@ -57,6 +59,8 @@ function App() {
 
         <Route path='/todos01' element={<Todos01 />} />
         <Route path='routerHook' element={<RouterHook />} />
+        <Route path='axios' element={<Axios />} />
+        <Route path='globalstate' element={<GlobalState />} />
       </Routes>
     </div>
   );

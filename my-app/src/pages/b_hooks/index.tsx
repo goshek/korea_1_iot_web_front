@@ -19,7 +19,11 @@ import UseReducer02 from './e_UseReducer/UseReducer02'
 import Custom01 from './f_CustomHook/Custom01'
 import Custom02 from './f_CustomHook/Custom02'
 
+import { Link, useLocation } from 'react-router-dom'
+
 function Index() {
+  const location= useLocation();
+  const {userName}= location.state || {};
   return (
     <div>
         <h1 style={{backgroundColor: "black", color:"white"}}>리액트 Hooks</h1>
@@ -58,6 +62,11 @@ function Index() {
 
         <hr />
         <Practice01 />
+
+        {
+          <p>{userName}</p>
+        }
+        
     </div>
   )
 }
