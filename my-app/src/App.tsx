@@ -18,15 +18,20 @@ import RouterHook from './pages/d_RouterHook'
 import Axios from './pages/e_Axios'
 import GlobalState from './pages/f_Globalstate'
 
+//전역상태관리예제
+import { useCountStore } from './pages/f_Globalstate/Zustand01';
+
 //! 리액트 프로젝트 개발 실행 명령어
 // npm run start
 // : http://localhost:3000 환경에서 실행
 
 function App() {
+  const {count}= useCountStore();
   return (
     <div>
       <h1>React Project</h1>
       <NaviBar />
+      <p>{count}</p>
 
       {/* Routes태그: Route를 감싸는 컴포넌트 */}
       <Routes>
